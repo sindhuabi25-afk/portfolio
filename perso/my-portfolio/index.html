@@ -2,275 +2,1615 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sindhu D | Portfolio</title>
-
+    <meta name="description" content="Sindhu D is a Front End Developer and UI/UX Designer with 6+ years of experience in responsive web development, WordPress, React, and AI-powered workflows.">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.svg">
+    <title>Sindhu D | Front End Developer & UI/UX Designer</title>
+    <!-- Bootstrap min css -->
+    <link rel="stylesheet" href="assets/css/vendor/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/plugins/swiper.css">
+    <link rel="stylesheet" href="assets/css/plugins/odometer.css">
+    <link rel="stylesheet" href="assets/css/vendor/animate.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+    <!-- custom css -->
+    <link rel="stylesheet" href="assets/css/style.css">
     <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:Arial, Helvetica, sans-serif;
-        }
-
-        body{
-            background:#f5f7fb;
-            color:#333;
-        }
-
-        .container{
-            width:90%;
-            max-width:1000px;
-            margin:50px auto;
-        }
-
-        h1{
-            text-align:center;
-            color:#0d47a1;
-            margin-bottom:10px;
-        }
-
-        p{
-            text-align:center;
-            margin-bottom:40px;
-            color:#666;
-        }
-
-        table{
-            width:100%;
-            border-collapse:collapse;
-            background:#fff;
-            box-shadow:0 5px 20px rgba(0,0,0,.1);
-            margin-bottom:40px;
-        }
-
-        th{
-            background:#0d47a1;
-            color:#fff;
-            padding:15px;
-        }
-
-        td{
-            padding:15px;
-            border-bottom:1px solid #eee;
-        }
-
-        tr:hover{
-            background:#f1f5ff;
-        }
-
-        a{
-            text-decoration:none;
-            color:#0d47a1;
-            font-weight:bold;
-        }
-
-        a:hover{
-            color:#ff5722;
-        }
-
-        footer{
-            margin-top:40px;
-            text-align:center;
-        }
-
-        .linkedin{
-            display:inline-block;
-            padding:10px 20px;
-            background:#0A66C2;
-            color:#fff;
-            border-radius:5px;
-        }
-
-        .linkedin:hover{
-            background:#084b91;
-            color:#fff;
-        }
-
-        .section-title{
-            margin-top:50px;
-            font-size:24px;
-            color:#0d47a1;
-            border-bottom:2px solid #0d47a1;
-            padding-bottom:10px;
-            margin-bottom:20px;
-        }
+        .tmp-sidebar-area, .overlay_close_side_menu { display: none !important; }
+        .one-page-menu { display: none; }
+        .tmp-mainmenu .submenu, .tmp-mainmenu .has-dropdown > a i { display: none !important; }
+        .banner-workspace { position: relative; width: 100%; max-width: 490px; min-height: 490px; margin: 0 auto; overflow: hidden; border-radius: 12px; background: linear-gradient(140deg, #151515 0%, #2b2b2b 55%, #ff014f 190%); box-shadow: 0 22px 48px rgba(0,0,0,.16); }
+        .banner-workspace::before { content: ''; position: absolute; width: 360px; height: 360px; border: 1px solid rgba(255,255,255,.22); border-radius: 50%; right: -120px; top: -115px; }
+        .banner-workspace::after { content: ''; position: absolute; width: 250px; height: 250px; border: 1px solid rgba(255,1,79,.8); border-radius: 50%; left: -85px; bottom: -110px; }
+        .workspace-code { position: absolute; z-index: 2; top: 12%; left: 10%; right: 10%; padding: 22px; border: 1px solid rgba(255,255,255,.16); border-radius: 8px; background: rgba(0,0,0,.34); color: #f6f6f6; font: 13px/1.9 monospace; box-shadow: 0 16px 35px rgba(0,0,0,.28); }
+        .workspace-code b { color: #ff5a8b; font-weight: 400; }.workspace-code em { color: #d7ff74; font-style: normal; }.workspace-code span { color: #8fd3ff; }
+        .workspace-label { position: absolute; z-index: 2; bottom: 11%; left: 10%; color: #fff; font-size: clamp(28px,4vw,47px); font-weight: 700; letter-spacing: -.05em; line-height: 1.02; }.workspace-label small { display: block; margin-top: 13px; color: #ff8aaa; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; }
+        .workspace-chip { position: absolute; z-index: 2; right: 10%; bottom: 13%; display: grid; width: 86px; height: 86px; place-items: center; border: 1px solid rgba(255,255,255,.55); border-radius: 50%; color: #fff; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-align: center; }
+        @media (max-width: 575px) { .banner-workspace { min-height: 390px; max-width: 360px; }.workspace-code { font-size: 11px; }.workspace-label { font-size: 31px; } }
+        .latest-portfolio-tabs-area { display: none; }
+        .live-project-filters { margin-bottom: 35px; }
+        .live-project-filters.latest-portfolio-tabs-area { display: block; }
+        .live-project-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+        .live-project-card { background: #fff; border: 1px solid #e5e5e5; overflow: hidden; transition: transform .25s ease, box-shadow .25s ease; }
+        .live-project-card:hover { transform: translateY(-7px); box-shadow: 0 18px 35px rgba(0,0,0,.11); }
+        .live-project-card[hidden] { display: none !important; }
+        .live-project-thumb { display: block; height: 205px; overflow: hidden; background: #f4f4f4; }
+        .live-project-thumb img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: top center; transition: transform .4s ease; }
+        .live-project-card:hover .live-project-thumb img { transform: scale(1.04); }
+        .live-project-body { padding: 18px; }
+        .live-project-type { color: #ff014f; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+        .live-project-title { margin: 7px 0 14px; font-size: 19px; line-height: 1.28; }
+        .live-project-link { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 700; color: #111; }
+        .live-project-link:hover { color: #ff014f; }
+        @media (max-width: 991px) { .live-project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+        @media (max-width: 575px) { .live-project-grid { grid-template-columns: 1fr; } .live-project-thumb { height: 220px; } }
+        .one-page-menu a { padding: 8px 11px; border-radius: 999px; color: #171717; font-size: 11px; font-weight: 600; line-height: 1; text-decoration: none; }
+        .one-page-menu a:hover { background: #ff014f; color: #fff; }
+        #about, #experience, #education, #portfolio, #contact { scroll-margin-top: 90px; }
+        @media (max-width: 767px) { .one-page-menu { top: 12px; right: 12px; left: 12px; justify-content: center; gap: 0; padding: 5px; overflow-x: auto; } .one-page-menu a { padding: 8px 9px; font-size: 9px; white-space: nowrap; } }
     </style>
 </head>
 
-<body>
+<body class="tmp-white-version" id="top">
 
-<div class="container">
+    <!-- tpm-header-area start -->
+    <header class="tmp-header-area-start header-one header--sticky header--transparent">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="header-content">
+                        <nav class="tmp-mainmenu-nav d-none d-xl-block">
+                            <ul class="tmp-mainmenu">
+                                <li>
+                                    <a href="#top">Home
+                                    </a>
+                                  
+                                </li>
+                                <li>
+                                    <a href="#about">About</a>
+                                </li>
+                                <li class="has-dropdown">
+                                    <a href="#education">Education
+                                        <i class="fa-regular fa-chevron-down"></i>
+                                    </a>
+                                 
+                                </li>
+                                <li class="has-dropdown">
+                                    <a href="#experience">Experience
+                                        <i class="fa-regular fa-chevron-down"></i>
+                                    </a>
+                                   
+                                </li>
+                                <li class="has-dropdown">
+                                    <a href="#portfolio">Portfolio
+                                        <i class="fa-regular fa-chevron-down"></i>
+                                    </a>
+                                   
+                                </li>
+                                <li>
+                                    <a href="#contact">Contact</a>
+                                </li>
+                            </ul>
 
-<h1>Sindhu D</h1>
+                        </nav>
+                        <div class="tmp-header-right">
+                            <div class="social-share-wrapper d-none d-md-block">
+                                <div class="social-link">
+                                   
+                                    <a href="https://www.linkedin.com/in/sindhu-harish-040aa9216/"><i class="fa-brands fa-linkedin-in"></i></a>
+                                  
+                                </div>
+                            </div>
+                            <div class="actions-area">
+                                <div class="tmp-side-collups-area d-none">
+                                    <button class="tmp-menu-bars tmp_button_active"><i class="fa-regular fa-bars-staggered"></i></button>
+                                </div>
+                                <div class="tmp-side-collups-area d-block d-xl-none">
+                                    <button class="tmp-menu-bars humberger_menu_active"><i class="fa-regular fa-bars-staggered"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- tpm-header-area end -->
+  
 
-<p>
-Frontend Developer | React Developer | WordPress Developer
-</p>
+    <div class="d-block d-xl-none">
+        <div class="tmp-popup-mobile-menu">
+            <div class="inner">
+                <div class="header-top">
+                    <div class="close-menu">
+                        <button class="close-button tmp-round-action-btn">
+                            <i class="fa-sharp fa-light fa-xmark"></i>
+                        </button>
+                    </div>
+                </div>
+                <ul class="tmp-mainmenu">
+                    <li>
+                        <a href="#top">Home
+                        </a>
+                       
+                    </li>
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="#education">Education
+                            <i class="fa-regular fa-chevron-down"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="service-white.html">Service</a></li>
+                            <li><a href="service-details-white.html">Service Details</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="#experience">Experience
+                            <i class="fa-regular fa-chevron-down"></i>
+                        </a>
+                      
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="#portfolio">Portfolio
+                            <i class="fa-regular fa-chevron-down"></i>
+                        </a>
+                       
+                    </li>
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
 
-<h2 class="section-title">Complete Project Portfolio</h2>
 
-<table>
+                <div class="social-wrapper mt--40">
+                    <span class="subtitle">find with me</span>
+                    <div class="social-link">
+                       
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                       
+                    </div>
+                </div>
+                <!-- social area end -->
 
-<tr>
-<th>S.No</th>
-<th>Project Name</th>
-<th>Live URL</th>
-</tr>
 
-<tr>
-<td>1</td>
-<td>Abfrl - OCM Portal</td>
-<td><a href="https://ablblocmportal.bixware.app/" target="_blank">View</a></td>
-</tr>
 
-<tr>
-<td>2</td>
-<td>Abfrl - Franchise Portal</td>
-<td><a href="https://abfrlfranchiseportal.bixware.app/" target="_blank">View</a></td>
-</tr>
+            </div>
+        </div>
+    </div>
 
-<tr>
-<td>3</td>
-<td>Abfrl - Novel Jewels</td>
-<td><a href="https://abfrlnoveljewels.bixware.app" target="_blank">View</a></td>
-</tr>
 
-<tr>
-<td>4</td>
-<td>Abfrl - Collection Reconciliation Portal</td>
-<td><a href="https://abfrlcollectionreco.bixware.app/" target="_blank">View</a></td>
-</tr>
 
-<tr>
-<td>5</td>
-<td>Abfrl - MFLBI</td>
-<td><a href="https://mflbi.bixware.app/" target="_blank">View</a></td>
-</tr>
+    <!-- tmp banner area start -->
+    <div class="rpp-banner-two-area">
+        <div class="container">
+            <div class="banner-two-main-wrapper">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 order-lg-2">
+                        <div class="banner-right-content">
+                            <div class="main-img">
+                                <div class="banner-workspace tmp-scroll-trigger tmp-zoom-in animation-order-1" aria-label="Front-end developer workspace illustration">
+                                    <div class="workspace-code"><b>const</b> <span>experience</span> = {<br>&nbsp;&nbsp;design: <em>'UI/UX'</em>,<br>&nbsp;&nbsp;build: <em>'React + WordPress'</em>,<br>&nbsp;&nbsp;focus: <em>'real user value'</em><br>};</div>
+                                    <div class="workspace-label">Design<br>&amp; build.<small>Front-end / UI-UX</small></div>
+                                    <div class="workspace-chip">6+<br>YEARS</div>
+                                </div>
+                                <h2 class="banner-big-text-1 up-down-2">Front End Developer</h2>
+                                <h2 class="banner-big-text-2 up-down">Front End Developer</h2>
+                                <div class="benner-two-bg-red-img">
+                                    <img src="assets/images/banner/banner-user-image-two-red-bg.png" alt="red-img">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 order-lg-1">
+                        <div class="inner">
+                            <span class="sub-title tmp-scroll-trigger tmp-fade-in animation-order-1">I am</span>
+                            <h1 class="title tmp-scroll-trigger tmp-fade-in animation-order-2">
+                                Sindhu D, a Front End <br>
+                                <span class="header-caption">
+                                    <span class="cd-headline clip is-full-width">
+                                        <span class="cd-words-wrapper">
+                                            <b class="is-visible theme-gradient">Developer</b>
+                                            <b class="is-hidden theme-gradient">UI/UX Designer</b>
+                                            <b class="is-hidden theme-gradient">React Developer</b>
+                                            <b class="is-hidden theme-gradient">WordPress Expert</b>
+                                            <b class="is-hidden theme-gradient">AI UI Explorer</b>
+                                        </span>
+                                </span>
+                                </span>
+                            </h1>
+                            <p class="disc tmp-scroll-trigger tmp-title-split tmp-fade-in animation-order-3">I’m Sindhu, a
+                                Front End Developer and UI/UX Designer with 6+ years of experience turning complex
+                                requirements into intuitive, high-performing <span>web products</span> across React,
+                                WordPress, and practical <span>AI-powered</span> workflows. I create responsive,
+                                accessible interfaces, custom WordPress solutions, and reusable UI systems that work
+                                smoothly across devices. My approach combines thoughtful design, clean development,
+                                and reliable testing to deliver useful digital experiences for real users.
+                            </p>
+                            <div class="button-area-banner-two tmp-scroll-trigger tmp-fade-in animation-order-4">
+                                <a class="tmp-btn hover-icon-reverse radius-round" href="#portfolio">
+                                    <span class="icon-reverse-wrapper">
+                                        <span class="btn-text">View My Work</span>
+                                    <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                    <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="find-me-on tmp-scroll-trigger tmp-fade-in animation-order-5">
+                                <h2 class="find-me-on-title">Find me on</h2>
+                                <div class="social-link banner">
+                                  
+                                    <a href="https://www.linkedin.com/in/sindhu-harish-040aa9216/"><i class="fa-brands fa-linkedin-in"></i></a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-<tr>
-<td>6</td>
-<td>AITA</td>
-<td><a href="https://bixware.app/aita/index.html" target="_blank">View</a></td>
-</tr>
+                </div>
+            </div>
+        </div>
+        <div class="banner-shape-two">
+            <img src="assets/images/banner/banner-shape-two.png" alt="">
+        </div>
+    </div>
+    <!-- tmp banner area end -->
 
-<tr>
-<td>7</td>
-<td>Anant Enterprise</td>
-<td><a href="https://anant.life/" target="_blank">View</a></td>
-</tr>
+    <!-- tmp text para start -->
+    <div class="about-content-area" id="about">
+        <div class="container tmp-section-gap">
+            <div class="text-para-doc-wrap">
+                <h2 class="text-para-documents tmp-scroll-trigger tmp-fade-in animation-order-1 inv-title-animation-wrap">I create
+                    <span>clear, engaging</span> digital products that turn complex needs into intuitive experiences—
+                    from <span>enterprise dashboards</span> and custom WordPress platforms to emerging AI interfaces,
+                    with hands-on web expertise <span>since 2012</span>.
+                </h2>
+                <div class="right-bg-text-para">
+                    <img src="assets/images/banner/right-bg-text-para-doc.png" alt="">
+                </div>
+                <div class="left-bg-text-para">
+                    <img src="assets/images/banner/left-bg-text-para-doc.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- tmp text para end -->
 
-<tr>
-<td>8</td>
-<td>Bixware App</td>
-<td><a href="https://bixware.app/" target="_blank">View</a></td>
-</tr>
+    <!-- tmp About Me Start -->
+    <section class="about-us-area">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-us-left-content-wrap bg-vactor-one">
+                        <div class="years-of-experience-card tmp-scroll-trigger tmp-fade-in animation-order-1">
+                            <h2 class="counter card-title"><span class="odometer" data-count="6">00</span>+
+                            </h2>
+                            <p class="card-para">years of experience</p>
+                        </div>
+                        <div class="design-card tmp-scroll-trigger tmp-fade-in animation-order-2">
+                            <div class="design-card-img">
+                                <div class="icon"><i class="fa-sharp fa-thin fa-lock"></i></div>
+                            </div>
+                            <div class="card-info">
+                                <h3 class="card-title">Ui/Ux Design</h3>
+                                <p class="card-para">Responsive web & UI/UX</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-us-right-content-wrap">
+                        <div class="section-head text-align-left mb--50">
+                            <div class="section-sub-title tmp-scroll-trigger tmp-fade-in animation-order-1">
+                                <span class="subtitle">About Me</span>
+                            </div>
+                            <h2 class="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">Designing
+                                useful digital <br> solutions with care</h2>
+                            <p class="description tmp-scroll-trigger tmp-fade-in animation-order-3">Front End Developer and UI/UX Designer with 6+ years of experience building responsive applications, custom WordPress solutions, and AI-enabled user workflows.</p>
+                        </div>
+                        <div class="about-us-section-card row g-5">
 
-<tr>
-<td>9</td>
-<td>Bixware Official Website EN-IN</td>
-<td><a href="https://www.bixware.com" target="_blank">View</a></td>
-</tr>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="about-us-card tmponhover tmp-scroll-trigger tmp-fade-in animation-order-4">
+                                    <div class="card-head">
+                                        <div class="logo-img">
+                                            <img src="assets/images/about/logo-1.svg" alt="logo">
+                                        </div>
+                                        <h3 class="card-title">Front-end Development</h3>
+                                    </div>
+                                    <p class="card-para">Responsive React, JavaScript, Bootstrap, and Material UI interfaces built for real users.</p>
+                                </div>
+                            </div>
 
-<tr>
-<td>10</td>
-<td>Bixware Official Website EN-DE</td>
-<td><a href="https://www.bixware.com" target="_blank">View</a></td>
-</tr>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="about-us-card tmponhover tmp-scroll-trigger tmp-fade-in animation-order-5">
+                                    <div class="card-head">
+                                        <div class="logo-img">
+                                            <img src="assets/images/about/logo-2.svg" alt="logo">
+                                        </div>
+                                        <h3 class="card-title">Custom WordPress</h3>
+                                    </div>
+                                    <p class="card-para">Custom themes, taxonomies, widgets, and scalable content experiences for client needs.</p>
+                                </div>
+                            </div>
 
-<tr>
-<td>11</td>
-<td>Bixware Official Website EN-US</td>
-<td><a href="https://www.bixware.com" target="_blank">View</a></td>
-</tr>
+                        </div>
+                        <div class="about-btn mt--40 tmp-scroll-trigger tmp-fade-in animation-order-6">
+                            <a class="tmp-btn hover-icon-reverse radius-round" href="#experience">
+                                <span class="icon-reverse-wrapper">
+                                <span class="btn-text">Explore My Experience</span>
+                                <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- tmp About Me end -->
 
-<tr>
-<td>12</td>
-<td>Bix QR</td>
-<td><a href="https://qr.bixware.app" target="_blank">View</a></td>
-</tr>
 
-<tr>
-<td>13</td>
-<td>Innspect App</td>
-<td><a href="https://admindemo.innspect.app/" target="_blank">View</a></td>
-</tr>
+    <section class="resume-section tmp-section-gapTop" id="experience">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="section-header mb--50 tmp-scroll-trigger tmp-fade-in animation-order-1">
+                        <h2 class="section-title"><i class="fa-regular fa-award"></i> My Experience</h2>
+                    </div>
 
-<tr>
-<td>14</td>
-<td>Internal Use Bixware</td>
-<td><a href="https://internaluse.bixware.app" target="_blank">View</a></td>
-</tr>
+                    <div class="resume-widget">
+                        <div class="resume-single tmp-scroll-trigger tmp-fade-in animation-order-1">
+                            <div class="time"><i class="fa-duotone fa-solid fa-circle-dot fa-fade mr--15"></i> 2021 – Present</div>
+                            <h3 class="resume-title">Web Developer / UI-UX Designer</h3>
+                            <div class="institute">Bixware Technologies Pvt. Ltd.</div>
+                        </div>
+                        <div class="resume-single tmp-scroll-trigger tmp-fade-in animation-order-2">
+                            <div class="time"><i class="fa-duotone fa-solid fa-circle-dot fa-fade mr--15"></i> 2014 – 2021</div>
+                            <h3 class="resume-title">Freelance Web Developer</h3>
+                            <div class="institute">Riot InfoTech</div>
+                        </div>
+                        <div class="resume-single tmp-scroll-trigger tmp-fade-in animation-order-3">
+                            <div class="time"><i class="fa-duotone fa-solid fa-circle-dot fa-fade mr--15"></i> 2012 – 2013</div>
+                            <h3 class="resume-title">Web Designer</h3>
+                            <div class="institute">Riot InfoTech</div>
+                        </div>
+                    </div>
+                </div>
 
-<tr>
-<td>15</td>
-<td>ISSI</td>
-<td><a href="https://issi.bixware.app" target="_blank">View</a></td>
-</tr>
+                <div class="col-md-6" id="education">
+                    <div class="section-header mb--50 tmp-scroll-trigger tmp-fade-in animation-order-1">
+                        <h2 class="section-title"> <i class="fa-regular fa-graduation-cap"></i> My Education</h2>
+                    </div>
 
-<tr>
-<td>16</td>
-<td>Nebraska REIA</td>
-<td><a href="https://reianebraska.bixware.app/profile/3/" target="_blank">View</a></td>
-</tr>
+                    <div class="resume-widget">
+                        <div class="resume-single tmp-scroll-trigger tmp-fade-in animation-order-1">
+                            <div class="time"><i class="fa-duotone fa-solid fa-circle-dot fa-fade mr--15"></i> 2008 – 2012</div>
+                            <h3 class="resume-title">B.Tech – Information Technology</h3>
+                            <div class="institute">PRIST University, Thanjavur · CGPA 9.24</div>
+                        </div>
+                        <div class="resume-single tmp-scroll-trigger tmp-fade-in animation-order-2">
+                            <div class="time"><i class="fa-duotone fa-solid fa-circle-dot fa-fade mr--15"></i> 2008</div>
+                            <h3 class="resume-title">12th Standard</h3>
+                            <div class="institute">St. Marcina's Matric Hr. Sec. School · 80%</div>
+                        </div>
+                        <div class="resume-single tmp-scroll-trigger tmp-fade-in animation-order-3">
+                            <div class="time"><i class="fa-duotone fa-solid fa-circle-dot fa-fade mr--15"></i> 2006</div>
+                            <h3 class="resume-title">10th Standard</h3>
+                            <div class="institute">St. Marcina's Matric Hr. Sec. School · 85%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- tmp skill area start -->
+    <div class="tmp-skill-area tmp-section-gapTop">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6">
+                    <div class="progress-wrapper">
+                        <div class="content">
+                            <h2 class="custom-title mb--30 tmp-scroll-trigger tmp-fade-in animation-order-1">
+                                UI/UX &amp; Design Skills <span><img src="assets/images/custom-line/custom-line.png" alt="custom-line"></span>
+                            </h2>
+                            <!-- Start Single Progress Charts -->
+                            <div class="progress-charts">
+                                <h6 class="heading heading-h6">
+                                    UI/UX DESIGN</h6>
+                                <div class="progress">
+                                    <div class="progress-bar wow fadeInLeft" data-wow-duration="0.5s" data-wow-delay=".3s" role="progressbar" style="width: 100%; visibility: visible; animation-duration: 0.5s; animation-delay: 0.3s; animation-name: fadeInLeft;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                                        <span class="percent-label">100%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Single Progress Charts -->
 
-<tr>
-<td>17</td>
-<td>Nebraska REIA (Main)</td>
-<td><a href="https://reianebraska.com" target="_blank">View</a></td>
-</tr>
+                            <!-- Start Single Progress Charts -->
+                            <div class="progress-charts">
+                                <h6 class="heading heading-h6">
+                                    RESPONSIVE DESIGN</h6>
+                                <div class="progress">
+                                    <div class="progress-bar wow fadeInLeft" data-wow-duration="0.6s" data-wow-delay=".4s" role="progressbar" style="width: 95%; visibility: visible; animation-duration: 0.6s; animation-delay: 0.4s; animation-name: fadeInLeft;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                                        <span class="percent-label">95%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Single Progress Charts -->
 
-<tr>
-<td>18</td>
-<td>Track INN</td>
-<td><a href="https://trackinn.bixware.app/" target="_blank">View</a></td>
-</tr>
+                            <!-- Start Single Progress Charts -->
+                            <div class="progress-charts">
+                                <h6 class="heading heading-h6">
+                                    PHOTOSHOP</h6>
+                                <div class="progress">
+                                    <div class="progress-bar wow fadeInLeft" data-wow-duration="0.7s" data-wow-delay=".5s" role="progressbar" style="width: 60%; visibility: visible; animation-duration: 0.7s; animation-delay: 0.5s; animation-name: fadeInLeft;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                                        <span class="percent-label">60%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Single Progress Charts -->
 
-<tr>
-<td>19</td>
-<td>Banks Boarding</td>
-<td><a href="https://banksboarding.com" target="_blank">View</a></td>
-</tr>
+                            <!-- Start Single Progress Charts -->
+                            <div class="progress-charts">
+                                <h6 class="heading heading-h6">
+                                    CROSS-BROWSER TESTING</h6>
+                                <div class="progress">
+                                    <div class="progress-bar wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay=".6s" role="progressbar" style="width: 70%; visibility: visible; animation-duration: 0.8s; animation-delay: 0.6s; animation-name: fadeInLeft;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                                        <span class="percent-label">80%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Single Progress Charts -->
 
-<tr>
-<td>20</td>
-<td>Wallin Tree Service</td>
-<td><a href="https://wallintreeservice.com" target="_blank">View</a></td>
-</tr>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="progress-wrapper">
+                        <div class="content">
+                            <h2 class="custom-title mb--30 tmp-scroll-trigger tmp-fade-in animation-order-1">
+                                Development &amp; AI Skills <span><img src="assets/images/custom-line/custom-line.png" alt="custom-line"></span>
+                            </h2>
+                            <!-- Start Single Progress Charts -->
+                            <div class="progress-charts">
+                                <h6 class="heading heading-h6">
+                                    HTML5 / CSS3 / JAVASCRIPT</h6>
+                                <div class="progress">
+                                    <div class="progress-bar wow fadeInLeft" data-wow-duration="0.5s" data-wow-delay=".3s" role="progressbar" style="width: 100%; visibility: visible; animation-duration: 0.5s; animation-delay: 0.3s; animation-name: fadeInLeft;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                                        <span class="percent-label">100%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Single Progress Charts -->
 
-<tr>
-<td>21</td>
-<td>L & M Steel Trucking</td>
-<td><a href="https://landmsteeltrucking.com" target="_blank">View</a></td>
-</tr>
+                            <!-- Start Single Progress Charts -->
+                            <div class="progress-charts">
+                                <h6 class="heading heading-h6">
+                                    REACT JS / MATERIAL UI</h6>
+                                <div class="progress">
+                                    <div class="progress-bar wow fadeInLeft" data-wow-duration="0.6s" data-wow-delay=".4s" role="progressbar" style="width: 95%; visibility: visible; animation-duration: 0.6s; animation-delay: 0.4s; animation-name: fadeInLeft;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                                        <span class="percent-label">95%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Single Progress Charts -->
 
-<tr>
-<td>22</td>
-<td>Seema Trivedi</td>
-<td><a href="https://strivedi.co" target="_blank">View</a></td>
-</tr>
+                            <!-- Start Single Progress Charts -->
+                            <div class="progress-charts">
+                                <h6 class="heading heading-h6">
+                                    WORDPRESS / CUSTOM THEMES</h6>
+                                <div class="progress">
+                                    <div class="progress-bar wow fadeInLeft" data-wow-duration="0.7s" data-wow-delay=".5s" role="progressbar" style="width: 60%; visibility: visible; animation-duration: 0.7s; animation-delay: 0.5s; animation-name: fadeInLeft;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                                        <span class="percent-label">90%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Single Progress Charts -->
 
-<tr>
-<td>23</td>
-<td>Ready Money</td>
-<td><a href="https://thereadymoney.com" target="_blank">View</a></td>
-</tr>
+                            <!-- Start Single Progress Charts -->
+                            <div class="progress-charts">
+                                <h6 class="heading heading-h6">
+                                    MCP / RAG / A2A / AgUI</h6>
+                                <div class="progress">
+                                    <div class="progress-bar wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay=".6s" role="progressbar" style="width: 70%; visibility: visible; animation-duration: 0.8s; animation-delay: 0.6s; animation-name: fadeInLeft;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                                        <span class="percent-label">70%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Single Progress Charts -->
 
-</table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- tmp skill area end -->
+    <!-- tmp Latest Portfolio Start -->
+    <section class="latest-portfolio-area custom-column-grid tmp-section-gap" id="portfolio">
+        <div class="container">
+            <div class="section-head mb--60">
+                <div class="section-sub-title center-title tmp-scroll-trigger tmp-fade-in animation-order-1">
+                    <span class="subtitle">Selected Projects</span>
+                </div>
+                <h2 class="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">Building products that make
+                    work simpler </h2>
+                <p class="description section-sm tmp-scroll-trigger tmp-fade-in animation-order-3">A selection of enterprise, product, and public-facing web platforms developed while working at Bixware Technologies and Riot Infotech.</p>
+            </div>
+            <div class="live-project-filters latest-portfolio-tabs-area" aria-label="Filter live projects">
+                <nav>
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li><button class="nav-link active" type="button" data-filter="all">All</button></li>
+                        <li><button class="nav-link" type="button" data-filter="htmlcss">HTML &amp; CSS</button></li>
+                        <li><button class="nav-link" type="button" data-filter="wordpress">WordPress</button></li>
+                        <li><button class="nav-link" type="button" data-filter="react">React</button></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="live-project-grid">
+                <article class="live-project-card" data-category="react"><a class="live-project-thumb" href="https://ablblocmportal.bixware.app/" target="_blank" rel="noopener"><img src="assets/images/projects-live/01-abfrl-ocm.png" alt="ABFRL OCM Portal screenshot"></a><div class="live-project-body"><span class="live-project-type">React</span><h3 class="live-project-title">ABFRL – OCM Portal</h3><a class="live-project-link" href="https://ablblocmportal.bixware.app/" target="_blank" rel="noopener">View live site <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></article>
+                <article class="live-project-card" data-category="react"><a class="live-project-thumb" href="https://abfrlfranchiseportal.bixware.app/" target="_blank" rel="noopener"><img src="assets/images/projects-live/02-abfrl-franchise.png" alt="ABFRL Franchise Portal screenshot"></a><div class="live-project-body"><span class="live-project-type">React</span><h3 class="live-project-title">ABFRL – Franchise Portal</h3><a class="live-project-link" href="https://abfrlfranchiseportal.bixware.app/" target="_blank" rel="noopener">View live site <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></article>
+                <article class="live-project-card" data-category="react"><a class="live-project-thumb" href="https://abfrlnoveljewels.bixware.app" target="_blank" rel="noopener"><img src="assets/images/projects-live/03-abfrl-novel-jewels.png" alt="ABFRL Novel Jewels screenshot"></a><div class="live-project-body"><span class="live-project-type">React</span><h3 class="live-project-title">ABFRL – Novel Jewels</h3><a class="live-project-link" href="https://abfrlnoveljewels.bixware.app" target="_blank" rel="noopener">View live site <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></article>
+                <article class="live-project-card" data-category="react"><a class="live-project-thumb" href="https://abfrlcollectionreco.bixware.app/" target="_blank" rel="noopener"><img src="assets/images/projects-live/04-abfrl-collection.png" alt="ABFRL Collection Reconciliation Portal screenshot"></a><div class="live-project-body"><span class="live-project-type">React</span><h3 class="live-project-title">ABFRL – Collection Reconciliation</h3><a class="live-project-link" href="https://abfrlcollectionreco.bixware.app/" target="_blank" rel="noopener">View live site <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></article>
+                <article class="live-project-card" data-category="htmlcss"><a class="live-project-thumb" href="https://mflbi.bixware.app/" target="_blank" rel="noopener"><img src="assets/images/projects-live/05-abfrl-mflbi.png" alt="ABFRL MFLBI screenshot"></a><div class="live-project-body"><span class="live-project-type">HTML &amp; CSS</span><h3 class="live-project-title">ABFRL – MFLBI</h3><a class="live-project-link" href="https://mflbi.bixware.app/" target="_blank" rel="noopener">View live site <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></article>
+                <article class="live-project-card" data-category="htmlcss"><a class="live-project-thumb" href="https://bixware.app/aita/index.html" target="_blank" rel="noopener"><img src="assets/images/projects-live/06-aita.png" alt="AITA screenshot"></a><div class="live-project-body"><span class="live-project-type">HTML &amp; CSS</span><h3 class="live-project-title">AITA</h3><a class="live-project-link" href="https://bixware.app/aita/index.html" target="_blank" rel="noopener">View live site <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></article>
+                <article class="live-project-card" data-category="wordpress"><a class="live-project-thumb" href="https://anant.life/" target="_blank" rel="noopener"><img src="assets/images/projects-live/07-anant.png" alt="Anant Enterprise screenshot"></a><div class="live-project-body"><span class="live-project-type">WordPress</span><h3 class="live-project-title">Anant Enterprise</h3><a class="live-project-link" href="https://anant.life/" target="_blank" rel="noopener">View live site <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></article>
+                <article class="live-project-card" data-category="htmlcss"><a class="live-project-thumb" href="https://bixware.app/" target="_blank" rel="noopener"><img src="assets/images/projects-live/08-bixware-app.png" alt="Bixware App screenshot"></a><div class="live-project-body"><span class="live-project-type">HTML &amp; CSS</span><h3 class="live-project-title">Bixware App</h3><a class="live-project-link" href="https://bixware.app/" target="_blank" rel="noopener">View live site <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></article>
+                <article class="live-project-card" data-category="htmlcss"><a class="live-project-thumb" href="https://www.bixware.com" target="_blank" rel="noopener"><img src="assets/images/projects-live/09-bixware-en-in.png" alt="Bixware Official Website screenshot"></a><div class="live-project-body"><span class="live-project-type">HTML &amp; CSS</span><h3 class="live-project-title">Bixware Official Website EN-IN</h3><a class="live-project-link" href="https://www.bixware.com" target="_blank" rel="noopener">View live site <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></article>
+              
+                <article class="live-project-card" data-category="react"><a class="live-project-thumb" href="https://qr.bixware.app" target="_blank" rel="noopener"><img src="assets/images/projects-live/12-bix-qr.png" alt="Bix QR screenshot"></a><div class="live-project-body"><span class="live-project-type">React</span><h3 class="live-project-title">Bix QR</h3><a class="live-project-link" href="https://qr.bixware.app" target="_blank" rel="noopener">View live site <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></article>
+                <article class="live-project-card" data-category="react"><a class="live-project-thumb" href="https://admindemo.innspect.app/" target="_blank" rel="noopener"><img src="assets/images/projects-live/13-innspect.png" alt="Innspect App screenshot"></a><div class="live-project-body"><span class="live-project-type">React</span><h3 class="live-project-title">Innspect App</h3><a class="live-project-link" href="https://admindemo.innspect.app/" target="_blank" rel="noopener">View live site <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></article>
+                <article class="live-project-card" data-category="react"><a class="live-project-thumb" href="https://internaluse.bixware.app" target="_blank" rel="noopener"><img src="assets/images/projects-live/14-internal-bixware.png" alt="Internal Use Bixware screenshot"></a><div class="live-project-body"><span class="live-project-type">React</span><h3 class="live-project-title">Internal Use Bixware</h3><a class="live-project-link" href="https://internaluse.bixware.app" target="_blank" rel="noopener">View live site <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></article>
+                <article class="live-project-card" data-category="htmlcss"><a class="live-project-thumb" href="https://issi.bixware.app" target="_blank" rel="noopener"><img src="assets/images/projects-live/15-issi.png" alt="ISSI screenshot"></a><div class="live-project-body"><span class="live-project-type">HTML &amp; CSS</span><h3 class="live-project-title">ISSI</h3><a class="live-project-link" href="https://issi.bixware.app" target="_blank" rel="noopener">View live site <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></article>
+                <article class="live-project-card" data-category="wordpress"><a class="live-project-thumb" href="https://kashanddash.com/" target="_blank" rel="noopener"><img src="assets/images/projects-live/16-nebraska-reia.png" alt="Nebraska REIA screenshot"></a><div class="live-project-body"><span class="live-project-type">WordPress</span><h3 class="live-project-title">Nebraska REIA</h3><a class="live-project-link" href="https://kashanddash.com/" target="_blank" rel="noopener">View live site <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></article>
+                <article class="live-project-card" data-category="wordpress"><a class="live-project-thumb" href="https://banksboarding.com" target="_blank" rel="noopener"><img src="assets/images/projects-live/19-banks-boarding.png" alt="Banks Boarding screenshot"></a><div class="live-project-body"><span class="live-project-type">WordPress</span><h3 class="live-project-title">Banks Boarding</h3><a class="live-project-link" href="https://banksboarding.com" target="_blank" rel="noopener">View live site <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></article>
+                <article class="live-project-card" data-category="wordpress"><a class="live-project-thumb" href="https://wallintreeservice.com" target="_blank" rel="noopener"><img src="assets/images/projects-live/20-wallin-tree.png" alt="Wallin Tree Service screenshot"></a><div class="live-project-body"><span class="live-project-type">WordPress</span><h3 class="live-project-title">Wallin Tree Service</h3><a class="live-project-link" href="https://wallintreeservice.com" target="_blank" rel="noopener">View live site <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></article>
+                <article class="live-project-card" data-category="wordpress"><a class="live-project-thumb" href="https://landmsteeltrucking.com" target="_blank" rel="noopener"><img src="assets/images/projects-live/21-landm-steel.png" alt="L and M Steel Trucking screenshot"></a><div class="live-project-body"><span class="live-project-type">WordPress</span><h3 class="live-project-title">L &amp; M Steel Trucking</h3><a class="live-project-link" href="https://landmsteeltrucking.com" target="_blank" rel="noopener">View live site <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></article>
+                <article class="live-project-card" data-category="wordpress"><a class="live-project-thumb" href="https://strivedi.co" target="_blank" rel="noopener"><img src="assets/images/projects-live/22-seema-trivedi.png" alt="Seema Trivedi screenshot"></a><div class="live-project-body"><span class="live-project-type">WordPress</span><h3 class="live-project-title">Seema Trivedi</h3><a class="live-project-link" href="https://strivedi.co" target="_blank" rel="noopener">View live site <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></article>
+               
+                <article class="live-project-card" data-category="wordpress"><a class="live-project-thumb" href="https://asianathletics.com/" target="_blank" rel="noopener"><img src="assets/images/projects-live/24-asian-athletics.png" alt="Asian Athletics screenshot"></a><div class="live-project-body"><span class="live-project-type">WordPress</span><h3 class="live-project-title">Asian Athletics</h3><a class="live-project-link" href="https://asianathletics.com/" target="_blank" rel="noopener">View live site <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></article>
+                <article class="live-project-card" data-category="wordpress"><a class="live-project-thumb" href="https://indianathletics.in/" target="_blank" rel="noopener"><img src="assets/images/projects-live/25-indian-athletics.png" alt="Indian Athletics screenshot"></a><div class="live-project-body"><span class="live-project-type">WordPress</span><h3 class="live-project-title">Indian Athletics</h3><a class="live-project-link" href="https://indianathletics.in/" target="_blank" rel="noopener">View live site <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></article>
+                <article class="live-project-card" data-category="wordpress"><a class="live-project-thumb" href="https://tnathleticassociation.com/" target="_blank" rel="noopener"><img src="assets/images/projects-live/26-tamilnadu-athletics.png" alt="Tamilnadu Athletics Association screenshot"></a><div class="live-project-body"><span class="live-project-type">WordPress</span><h3 class="live-project-title">Tamilnadu Athletics Association</h3><a class="live-project-link" href="https://tnathleticassociation.com/" target="_blank" rel="noopener">View live site <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></article>
+                <article class="live-project-card" data-category="htmlcss"><a class="live-project-thumb" href="https://recamsolutions.com/" target="_blank" rel="noopener"><img src="assets/images/projects-live/27-recam-solutions.png" alt="Recam Solutions screenshot"></a><div class="live-project-body"><span class="live-project-type">HTML &amp; CSS</span><h3 class="live-project-title">Recam Solutions</h3><a class="live-project-link" href="https://recamsolutions.com/" target="_blank" rel="noopener">View live site <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></article>
+                <article class="live-project-card" data-category="wordpress"><a class="live-project-thumb" href="https://shreeshivashakthikalaikoodam.in/" target="_blank" rel="noopener"><img src="assets/images/projects-live/28-shree-shiva-shakthi.png" alt="Shree Shiva Shakthi Kalai Koodam screenshot"></a><div class="live-project-body"><span class="live-project-type">WordPress</span><h3 class="live-project-title">Shree Shiva Shakthi Kalai Koodam</h3><a class="live-project-link" href="https://shreeshivashakthikalaikoodam.in/" target="_blank" rel="noopener">View live site <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></article>
+            </div>
+            <script>
+                document.querySelectorAll('.live-project-filters button').forEach(function (button) { button.addEventListener('click', function () { var filter = this.dataset.filter; document.querySelectorAll('.live-project-filters button').forEach(function (item) { item.classList.remove('active'); }); this.classList.add('active'); document.querySelectorAll('.live-project-card').forEach(function (card) { card.hidden = filter !== 'all' && card.dataset.category !== filter; }); }); });
+            </script>
+            <div class="latest-portfolio-tabs-area">
+                <nav>
+                    <ul class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <li>
+                            <button class="nav-link active" id="nav-all-tab" data-bs-toggle="tab" data-bs-target="#nav-all" type="button" role="tab" aria-controls="nav-all" aria-selected="true">All</button>
+                        </li>
+                        <li>
+                            <button class="nav-link" id="nav-branding-tab" data-bs-toggle="tab" data-bs-target="#nav-branding" type="button" role="tab" aria-controls="nav-branding" aria-selected="false">React &amp; Enterprise</button>
+                        </li>
+                        <li>
+                            <button class="nav-link" id="nav-design-tab" data-bs-toggle="tab" data-bs-target="#nav-design" type="button" role="tab" aria-controls="nav-design" aria-selected="false">WordPress</button>
+                        </li>
+                        <li>
+                            <button class="nav-link" id="nav-content-writing-tab" data-bs-toggle="tab" data-bs-target="#nav-content-writing" type="button" role="tab" aria-controls="nav-content-writing" aria-selected="false">Content writing</button>
+                        </li>
+                        <li>
+                            <button class="nav-link" id="nav-marketing-tab" data-bs-toggle="tab" data-bs-target="#nav-marketing" type="button" role="tab" aria-controls="nav-marketing" aria-selected="false">Marketing</button>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tab-content bg-blur-style-one" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-all" role="tabpanel" aria-labelledby="nav-all-tab" tabindex="0">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="latest-portfolio-card-style-two image-box-hover tmp-scroll-trigger tmp-fade-in animation-order-1">
+                                    <div class="portfoli-card-img">
+                                        <div class="img-box v2">
+                                            <a class="tmp-scroll-trigger tmp-zoom-in animation-order-1" href="project-details-white.html">
+                                                <img class="w-100" src="assets/images/latest-portfolio/portfoli-img-1.jpg" alt="Thumbnail">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-card-content-wrap">
+                                        <div class="content-left">
+                                            <h3 class="portfolio-card-title"><a href="#portfolio">ABFRL Enterprise Portals Suite</a></h3>
+                                            <div class="tag-items">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#" class="tag-item">React JS</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Material UI</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
 
-<footer>
+                                        <a class="tmp-btn hover-icon-reverse radius-round btn-border btn-md" href="project-details-white.html">
+                                            <span class="icon-reverse-wrapper">
+                                    <span class="btn-text">Enterprise Platform</span>
+                                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                            </span>
+                                        </a>
 
-<br><br>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="latest-portfolio-card-style-two image-box-hover tmp-scroll-trigger tmp-fade-in animation-order-2">
+                                    <div class="portfoli-card-img">
+                                        <div class="img-box v2">
+                                            <a class="tmp-scroll-trigger tmp-zoom-in animation-order-1" href="project-details-white.html">
+                                                <img class="w-100" src="assets/images/latest-portfolio/portfoli-img-3.jpg" alt="Thumbnail">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-card-content-wrap">
+                                        <div class="content-left">
+                                            <h3 class="portfolio-card-title"><a href="#portfolio">Bixware Digital Presence &amp; QR</a></h3>
+                                            <div class="tag-items">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#" class="tag-item">WordPress</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Custom PHP</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="tag-item">JavaScript</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <a class="tmp-btn hover-icon-reverse radius-round btn-border btn-md" href="project-details-white.html">
+                                            <span class="icon-reverse-wrapper">
+                                    <span class="btn-text">Multi-region Platform</span>
+                                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="latest-portfolio-card-style-two image-box-hover tmp-scroll-trigger tmp-fade-in animation-order-3">
+                                    <div class="portfoli-card-img">
+                                        <div class="img-box v2">
+                                            <a class="tmp-scroll-trigger tmp-zoom-in animation-order-1" href="project-details-white.html">
+                                                <img class="w-100" src="assets/images/latest-portfolio/portfoli-img-4.jpg" alt="Thumbnail">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-card-content-wrap">
+                                        <div class="content-left">
+                                            <h3 class="portfolio-card-title"><a href="#portfolio">Innspect &amp; Track INN Suite</a></h3>
+                                            <div class="tag-items">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#" class="tag-item">jQuery</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Bootstrap</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="tag-item">HTML5 / CSS3</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <a class="tmp-btn hover-icon-reverse radius-round btn-border btn-md" href="project-details-white.html">
+                                            <span class="icon-reverse-wrapper">
+                                    <span class="btn-text">Operations Suite</span>
+                                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="latest-portfolio-card-style-two image-box-hover tmp-scroll-trigger tmp-fade-in animation-order-4">
+                                    <div class="portfoli-card-img">
+                                        <div class="img-box v2">
+                                            <a class="tmp-scroll-trigger tmp-zoom-in animation-order-1" href="project-details-white.html">
+                                                <img class="w-100" src="assets/images/latest-portfolio/portfoli-img-2.jpg" alt="Thumbnail">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-card-content-wrap">
+                                        <div class="content-left">
+                                            <h3 class="portfolio-card-title"><a href="#portfolio">Regional Athletics Platforms</a></h3>
+                                            <div class="tag-items">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#" class="tag-item">WordPress</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Performance UI</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <a class="tmp-btn hover-icon-reverse radius-round btn-border btn-md" href="project-details-white.html">
+                                            <span class="icon-reverse-wrapper">
+                                    <span class="btn-text">Public Platform</span>
+                                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-branding" role="tabpanel" aria-labelledby="nav-branding-tab" tabindex="0">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="latest-portfolio-card-style-two image-box-hover tmp-scroll-trigger tmp-fade-in animation-order-1">
+                                    <div class="portfoli-card-img">
+                                        <div class="img-box v2">
+                                            <a class="tmp-scroll-trigger tmp-zoom-in animation-order-1" href="project-details-white.html">
+                                                <img class="w-100" src="assets/images/latest-portfolio/portfoli-img-1.jpg" alt="Thumbnail">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-card-content-wrap">
+                                        <div class="content-left">
+                                            <h3 class="portfolio-card-title"><a href="project-details-white.html">SAAS website
+                                                    design</a></h3>
+                                            <div class="tag-items">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Figma</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Figma</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <a class="tmp-btn hover-icon-reverse radius-round btn-border btn-md" href="project-details-white.html">
+                                            <span class="icon-reverse-wrapper">
+                                    <span class="btn-text">View design</span>
+                                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="latest-portfolio-card-style-two image-box-hover tmp-scroll-trigger tmp-fade-in animation-order-2">
+                                    <div class="portfoli-card-img">
+                                        <div class="img-box v2">
+                                            <a class="tmp-scroll-trigger tmp-zoom-in animation-order-1" href="project-details-white.html">
+                                                <img class="w-100" src="assets/images/latest-portfolio/portfoli-img-3.jpg" alt="Thumbnail">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-card-content-wrap">
+                                        <div class="content-left">
+                                            <h3 class="portfolio-card-title"><a href="project-details-white.html">Workout App
+                                                    design</a></h3>
+                                            <div class="tag-items">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Adobe</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Webflow</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Ai</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <a class="tmp-btn hover-icon-reverse radius-round btn-border btn-md" href="project-details-white.html">
+                                            <span class="icon-reverse-wrapper">
+                                    <span class="btn-text">View design</span>
+                                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="latest-portfolio-card-style-two image-box-hover tmp-scroll-trigger tmp-fade-in animation-order-3">
+                                    <div class="portfoli-card-img">
+                                        <div class="img-box v2">
+                                            <a class="tmp-scroll-trigger tmp-zoom-in animation-order-1" href="project-details-white.html">
+                                                <img class="w-100" src="assets/images/latest-portfolio/portfoli-img-4.jpg" alt="Thumbnail">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-card-content-wrap">
+                                        <div class="content-left">
+                                            <h3 class="portfolio-card-title"><a href="project-details-white.html">Workout App
+                                                    design</a></h3>
+                                            <div class="tag-items">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Figma</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Framer</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Wordpress</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <a class="tmp-btn hover-icon-reverse radius-round btn-border btn-md" href="project-details-white.html">
+                                            <span class="icon-reverse-wrapper">
+                                    <span class="btn-text">View design</span>
+                                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="latest-portfolio-card-style-two image-box-hover tmp-scroll-trigger tmp-fade-in animation-order-4">
+                                    <div class="portfoli-card-img">
+                                        <div class="img-box v2">
+                                            <a class="tmp-scroll-trigger tmp-zoom-in animation-order-1" href="project-details-white.html">
+                                                <img class="w-100" src="assets/images/latest-portfolio/portfoli-img-2.jpg" alt="Thumbnail">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-card-content-wrap">
+                                        <div class="content-left">
+                                            <h3 class="portfolio-card-title"><a href="project-details-white.html">Dashboard
+                                                    design</a></h3>
+                                            <div class="tag-items">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Adobe</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Webflow</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <a class="tmp-btn hover-icon-reverse radius-round btn-border btn-md" href="project-details-white.html">
+                                            <span class="icon-reverse-wrapper">
+                                    <span class="btn-text">View design</span>
+                                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-design" role="tabpanel" aria-labelledby="nav-design-tab" tabindex="0">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="latest-portfolio-card-style-two image-box-hover tmp-scroll-trigger tmp-fade-in animation-order-1">
+                                    <div class="portfoli-card-img">
+                                        <div class="img-box v2">
+                                            <a class="tmp-scroll-trigger tmp-zoom-in animation-order-1" href="project-details-white.html">
+                                                <img class="w-100" src="assets/images/latest-portfolio/portfoli-img-1.jpg" alt="Thumbnail">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-card-content-wrap">
+                                        <div class="content-left">
+                                            <h3 class="portfolio-card-title"><a href="project-details-white.html">SAAS website
+                                                    design</a></h3>
+                                            <div class="tag-items">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Figma</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Figma</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <a class="tmp-btn hover-icon-reverse radius-round btn-border btn-md" href="project-details-white.html">
+                                            <span class="icon-reverse-wrapper">
+                                    <span class="btn-text">View design</span>
+                                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="latest-portfolio-card-style-two image-box-hover tmp-scroll-trigger tmp-fade-in animation-order-2">
+                                    <div class="portfoli-card-img">
+                                        <div class="img-box v2">
+                                            <a class="tmp-scroll-trigger tmp-zoom-in animation-order-1" href="project-details-white.html">
+                                                <img class="w-100" src="assets/images/latest-portfolio/portfoli-img-3.jpg" alt="Thumbnail">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-card-content-wrap">
+                                        <div class="content-left">
+                                            <h3 class="portfolio-card-title"><a href="project-details-white.html">Workout App
+                                                    design</a></h3>
+                                            <div class="tag-items">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Adobe</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Webflow</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Ai</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <a class="tmp-btn hover-icon-reverse radius-round btn-border btn-md" href="project-details-white.html">
+                                            <span class="icon-reverse-wrapper">
+                                    <span class="btn-text">View design</span>
+                                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="latest-portfolio-card-style-two image-box-hover tmp-scroll-trigger tmp-fade-in animation-order-3">
+                                    <div class="portfoli-card-img">
+                                        <div class="img-box v2">
+                                            <a class="tmp-scroll-trigger tmp-zoom-in animation-order-1" href="project-details-white.html">
+                                                <img class="w-100" src="assets/images/latest-portfolio/portfoli-img-4.jpg" alt="Thumbnail">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-card-content-wrap">
+                                        <div class="content-left">
+                                            <h3 class="portfolio-card-title"><a href="project-details-white.html">Workout App
+                                                    design</a></h3>
+                                            <div class="tag-items">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Figma</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Framer</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Wordpress</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <a class="tmp-btn hover-icon-reverse radius-round btn-border btn-md" href="project-details-white.html">
+                                            <span class="icon-reverse-wrapper">
+                                    <span class="btn-text">View design</span>
+                                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="latest-portfolio-card-style-two image-box-hover tmp-scroll-trigger tmp-fade-in animation-order-4">
+                                    <div class="portfoli-card-img">
+                                        <div class="img-box v2">
+                                            <a class="tmp-scroll-trigger tmp-zoom-in animation-order-1" href="project-details-white.html">
+                                                <img class="w-100" src="assets/images/latest-portfolio/portfoli-img-2.jpg" alt="Thumbnail">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-card-content-wrap">
+                                        <div class="content-left">
+                                            <h3 class="portfolio-card-title"><a href="project-details-white.html">Dashboard
+                                                    design</a></h3>
+                                            <div class="tag-items">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Adobe</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Webflow</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <a class="tmp-btn hover-icon-reverse radius-round btn-border btn-md" href="project-details-white.html">
+                                            <span class="icon-reverse-wrapper">
+                                    <span class="btn-text">View design</span>
+                                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-content-writing" role="tabpanel" aria-labelledby="nav-content-writing-tab" tabindex="0">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="latest-portfolio-card-style-two image-box-hover tmp-scroll-trigger tmp-fade-in animation-order-1">
+                                    <div class="portfoli-card-img">
+                                        <div class="img-box v2">
+                                            <a class="tmp-scroll-trigger tmp-zoom-in animation-order-1" href="project-details-white.html">
+                                                <img class="w-100" src="assets/images/latest-portfolio/portfoli-img-1.jpg" alt="Thumbnail">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-card-content-wrap">
+                                        <div class="content-left">
+                                            <h3 class="portfolio-card-title"><a href="project-details-white.html">SAAS website
+                                                    design</a></h3>
+                                            <div class="tag-items">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Figma</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Figma</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <a class="tmp-btn hover-icon-reverse radius-round btn-border btn-md" href="project-details-white.html">
+                                            <span class="icon-reverse-wrapper">
+                                    <span class="btn-text">View design</span>
+                                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="latest-portfolio-card-style-two image-box-hover tmp-scroll-trigger tmp-fade-in animation-order-2">
+                                    <div class="portfoli-card-img">
+                                        <div class="img-box v2">
+                                            <a class="tmp-scroll-trigger tmp-zoom-in animation-order-1" href="project-details-white.html">
+                                                <img class="w-100" src="assets/images/latest-portfolio/portfoli-img-3.jpg" alt="Thumbnail">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-card-content-wrap">
+                                        <div class="content-left">
+                                            <h3 class="portfolio-card-title"><a href="project-details-white.html">Workout App
+                                                    design</a></h3>
+                                            <div class="tag-items">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Adobe</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Webflow</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Ai</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <a class="tmp-btn hover-icon-reverse radius-round btn-border btn-md" href="project-details-white.html">
+                                            <span class="icon-reverse-wrapper">
+                                    <span class="btn-text">View design</span>
+                                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="latest-portfolio-card-style-two image-box-hover tmp-scroll-trigger tmp-fade-in animation-order-3">
+                                    <div class="portfoli-card-img">
+                                        <div class="img-box v2">
+                                            <a class="tmp-scroll-trigger tmp-zoom-in animation-order-1" href="project-details-white.html">
+                                                <img class="w-100" src="assets/images/latest-portfolio/portfoli-img-4.jpg" alt="Thumbnail">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-card-content-wrap">
+                                        <div class="content-left">
+                                            <h3 class="portfolio-card-title"><a href="project-details-white.html">Workout App
+                                                    design</a></h3>
+                                            <div class="tag-items">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Figma</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Framer</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Wordpress</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <a class="tmp-btn hover-icon-reverse radius-round btn-border btn-md" href="project-details-white.html">
+                                            <span class="icon-reverse-wrapper">
+                                    <span class="btn-text">View design</span>
+                                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="latest-portfolio-card-style-two image-box-hover tmp-scroll-trigger tmp-fade-in animation-order-4">
+                                    <div class="portfoli-card-img">
+                                        <div class="img-box v2">
+                                            <a class="tmp-scroll-trigger tmp-zoom-in animation-order-1" href="project-details-white.html">
+                                                <img class="w-100" src="assets/images/latest-portfolio/portfoli-img-2.jpg" alt="Thumbnail">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-card-content-wrap">
+                                        <div class="content-left">
+                                            <h3 class="portfolio-card-title"><a href="project-details-white.html">Dashboard
+                                                    design</a></h3>
+                                            <div class="tag-items">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Adobe</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Webflow</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <a class="tmp-btn hover-icon-reverse radius-round btn-border btn-md" href="project-details-white.html">
+                                            <span class="icon-reverse-wrapper">
+                                    <span class="btn-text">View design</span>
+                                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-marketing" role="tabpanel" aria-labelledby="nav-marketing-tab" tabindex="0">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="latest-portfolio-card-style-two image-box-hover tmp-scroll-trigger tmp-fade-in animation-order-1">
+                                    <div class="portfoli-card-img">
+                                        <div class="img-box v2">
+                                            <a class="tmp-scroll-trigger tmp-zoom-in animation-order-1" href="project-details-white.html">
+                                                <img class="w-100" src="assets/images/latest-portfolio/portfoli-img-1.jpg" alt="Thumbnail">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-card-content-wrap">
+                                        <div class="content-left">
+                                            <h3 class="portfolio-card-title"><a href="project-details-white.html">SAAS website
+                                                    design</a></h3>
+                                            <div class="tag-items">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Figma</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Figma</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <a class="tmp-btn hover-icon-reverse radius-round btn-border btn-md" href="project-details-white.html">
+                                            <span class="icon-reverse-wrapper">
+                                    <span class="btn-text">View design</span>
+                                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="latest-portfolio-card-style-two image-box-hover tmp-scroll-trigger tmp-fade-in animation-order-2">
+                                    <div class="portfoli-card-img">
+                                        <div class="img-box v2">
+                                            <a class="tmp-scroll-trigger tmp-zoom-in animation-order-1" href="project-details-white.html">
+                                                <img class="w-100" src="assets/images/latest-portfolio/portfoli-img-3.jpg" alt="Thumbnail">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-card-content-wrap">
+                                        <div class="content-left">
+                                            <h3 class="portfolio-card-title"><a href="project-details-white.html">Workout App
+                                                    design</a></h3>
+                                            <div class="tag-items">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Adobe</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Webflow</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Ai</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <a class="tmp-btn hover-icon-reverse radius-round btn-border btn-md" href="project-details-white.html">
+                                            <span class="icon-reverse-wrapper">
+                                    <span class="btn-text">View design</span>
+                                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="latest-portfolio-card-style-two image-box-hover tmp-scroll-trigger tmp-fade-in animation-order-3">
+                                    <div class="portfoli-card-img">
+                                        <div class="img-box v2">
+                                            <a class="tmp-scroll-trigger tmp-zoom-in animation-order-1" href="project-details-white.html">
+                                                <img class="w-100" src="assets/images/latest-portfolio/portfoli-img-4.jpg" alt="Thumbnail">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-card-content-wrap">
+                                        <div class="content-left">
+                                            <h3 class="portfolio-card-title"><a href="project-details-white.html">Workout App
+                                                    design</a></h3>
+                                            <div class="tag-items">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Figma</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Framer</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Wordpress</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
 
-<a class="linkedin"
-href="https://www.linkedin.com/in/sindhu-harish-040aa9216/"
-target="_blank">
-LinkedIn Profile
-</a>
+                                        <a class="tmp-btn hover-icon-reverse radius-round btn-border btn-md" href="project-details-white.html">
+                                            <span class="icon-reverse-wrapper">
+                                    <span class="btn-text">View design</span>
+                                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="latest-portfolio-card-style-two image-box-hover tmp-scroll-trigger tmp-fade-in animation-order-4">
+                                    <div class="portfoli-card-img">
+                                        <div class="img-box v2">
+                                            <a class="tmp-scroll-trigger tmp-zoom-in animation-order-1" href="project-details-white.html">
+                                                <img class="w-100" src="assets/images/latest-portfolio/portfoli-img-2.jpg" alt="Thumbnail">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-card-content-wrap">
+                                        <div class="content-left">
+                                            <h3 class="portfolio-card-title"><a href="project-details-white.html">Dashboard
+                                                    design</a></h3>
+                                            <div class="tag-items">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Adobe</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="tag-item">Webflow</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <a class="tmp-btn hover-icon-reverse radius-round btn-border btn-md" href="project-details-white.html">
+                                            <span class="icon-reverse-wrapper">
+                                    <span class="btn-text">View design</span>
+                                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- tmp Latest Portfolio end -->
 
-</footer>
+    <!-- Tpm My Expertise Area start -->
+    <section class="my-expertise-area tpm-custom-box-bg">
+        <div class="container">
+            <div class="header-top-inner">
+                <div class="section-head text-align-left">
+                    <div class="section-sub-title tmp-scroll-trigger tmp-fade-in animation-order-1">
+                        <span class="subtitle">My Expertise</span>
+                    </div>
+                    <h2 class="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">Strong design,
+                        reliable <br> front-end delivery</h2>
+                </div>
+                <div class="discription-area tmp-scroll-trigger tmp-fade-in animation-order-3">
+                    <p class="description color-primary-3rd">I combine design thinking, clean implementation, and continuous testing to create digital experiences that perform across browsers and devices.</p>
+                </div>
+            </div>
+            <div class="services-widget v2">
+                <div class="service-item current tmp-scroll-trigger tmp-fade-in animation-order-1">
+                    <div class="my-expertise-card-wrap">
+                        <div class="expertise-card-left">
+                            <div class="expertise-card-logo">
+                                <img src="assets/images/my-expertise/logo-4.svg" alt="logo">
+                            </div>
+                            <h3 class="title">UI/UX Design</h3>
+                        </div>
+                        <div class="single-progress-circle sal-animate" data-sal-delay="300" data-sal="slide-up" data-sal-duration="1000">
+                            <svg class="radial-progress" data-countervalue="90" viewBox="0 0 80 80">
+                                <circle class="bar-static" cx="40" cy="40" r="35"></circle>
+                                <circle class="bar--animated" cx="40" cy="40" r="35" style="stroke-dashoffset: 131.947px;"></circle>
+                                <text class="countervalue" x="50%" y="55%" transform="matrix(0, 1, -1, 0, 80, 0)">90%</text>
+                            </svg>
+                        </div>
+                        <p class="para">Thoughtful interfaces, accessible patterns, and visual systems designed around real user needs.</p>
+                    </div>
+                    <button class="service-link modal-popup"></button>
+                </div>
+                <div class="service-item tmp-scroll-trigger tmp-fade-in animation-order-2">
+                    <div class="my-expertise-card-wrap">
+                        <div class="expertise-card-left">
+                            <div class="expertise-card-logo">
+                                <img src="assets/images/my-expertise/logo-5.svg" alt="logo">
+                            </div>
+                            <h3 class="title">Front-end Engineering</h3>
+                        </div>
+                        <div class="single-progress-circle sal-animate" data-sal-delay="300" data-sal="slide-up" data-sal-duration="1000">
+                            <svg class="radial-progress" data-countervalue="40" viewBox="0 0 80 80">
+                                <circle class="bar-static" cx="40" cy="40" r="35"></circle>
+                                <circle class="bar--animated" cx="40" cy="40" r="35" style="stroke-dashoffset: 131.947px;"></circle>
+                                <text class="countervalue" x="50%" y="55%" transform="matrix(0, 1, -1, 0, 80, 0)">75%</text>
+                            </svg>
+                        </div>
+                        <p class="para">Responsive React, JavaScript, WordPress, and Bootstrap implementations built to last.</p>
+                    </div>
+                    <button class="service-link modal-popup"></button>
+                </div>
+                <div class="service-item tmp-scroll-trigger tmp-fade-in animation-order-3">
+                    <div class="my-expertise-card-wrap">
+                        <div class="expertise-card-left">
+                            <div class="expertise-card-logo">
+                                <img src="assets/images/my-expertise/logo-6.svg" alt="logo">
+                            </div>
+                            <h3 class="title">AI-enabled Workflows</h3>
+                        </div>
+                        <div class="single-progress-circle sal-animate" data-sal-delay="300" data-sal="slide-up" data-sal-duration="1000">
+                            <svg class="radial-progress" data-countervalue="40" viewBox="0 0 80 80">
+                                <circle class="bar-static" cx="40" cy="40" r="35"></circle>
+                                <circle class="bar--animated" cx="40" cy="40" r="35" style="stroke-dashoffset: 131.947px;"></circle>
+                                <text class="countervalue" x="50%" y="55%" transform="matrix(0, 1, -1, 0, 80, 0)">80%</text>
+                            </svg>
+                        </div>
+                        <p class="para">Exploring MCP, RAG, A2A, and AgUI to build helpful, connected product experiences.</p>
+                    </div>
+                    <button class="service-link modal-popup"></button>
+                </div>
+                <div class="active-bg wow fadeInUp mleave"></div>
+            </div>
+        </div>
+    </section>
+    <!-- Tpm My Expertise Area End -->
 
-</div>
 
+
+    <!-- Tpm My Skill Area Start -->
+    <section class="my-skill-area-style-two plr--120 plr_lg--30 plr_md--30 plr_sm--30 plr_mobile--15 mt--70 mb-5">
+        <div class="tpm-custom-box-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl-6 col-lg-12 col-md-12">
+                        <div class="my-skill-area-left-content-wrap">
+                            <div class="section-head text-align-left">
+                                <div class="section-sub-title tmp-scroll-trigger tmp-fade-in animation-order-1">
+                                    <span class="subtitle">My Skill</span>
+                                </div>
+                                <h2 class="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">My Experts
+                                    Areas Where I <br> Gained Skill</h2>
+                                <p class="description tmp-scroll-trigger tmp-fade-in animation-order-3">Business consulting
+                                    consultants provide expert advice and guida busi
+                                    nesses to help them improve their performance, efficiency, and organ izational Business
+                                    consulting consultants provide</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-6 col-lg-12 col-md-12">
+                        <div class="my-skill-card-style-two row">
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="my-skill-card tmp-scroll-trigger tmp-fade-in animation-order-1">
+                                    <div class="card-icon">
+                                        <img src="assets/images/icons/icon-01.png" alt="my-skill-icon">
+                                    </div>
+                                    <h3 class="card-title">Framer</h3>
+                                    <p class="card-para">The personal portfol category includes websites or physic Your
+                                        Journey Your Story</p>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="my-skill-card tmp-scroll-trigger tmp-fade-in animation-order-2">
+                                    <div class="card-icon">
+                                        <img src="assets/images/icons/icon-02.png" alt="my-skill-icon">
+                                    </div>
+                                    <h3 class="card-title">Webflow</h3>
+                                    <p class="card-para">The personal portfol category includes websites or physic Your
+                                        Journey Your Story</p>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="my-skill-card tmp-scroll-trigger tmp-fade-in animation-order-3">
+                                    <div class="card-icon">
+                                        <img src="assets/images/icons/icon-03.png" alt="my-skill-icon">
+                                    </div>
+                                    <h3 class="card-title">Figma</h3>
+                                    <p class="card-para">The personal portfol category includes websites or physic Your
+                                        Journey Your Story</p>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="my-skill-card tmp-scroll-trigger tmp-fade-in animation-order-4">
+                                    <div class="card-icon">
+                                        <img src="assets/images/icons/icon-04.png" alt="my-skill-icon">
+                                    </div>
+                                    <h3 class="card-title">Wordpress</h3>
+                                    <p class="card-para">The personal portfol category includes websites or physic Your
+                                        Journey Your Story</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Tpm My Skill Area End -->
+
+
+
+
+    <!-- Start Footer Area  -->
+    <footer class="footer-area footer-style-two-wrapper bg-color-footer bg_images tmp-section-gap">
+        <div class="container">
+            <div class="footer-main footer-style-two">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="single-footer-wrapper border-right mr--20">
+                            <p class="description">Front End Developer &amp; UI/UX Designer creating responsive, purposeful web experiences.</p>
+                            <div class="social-link footer">
+                               
+                                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                               
+                            </div>
+                        </div>
+                    </div>
+                  
+                    <div class="col-lg-4 col-md-4 col-sm-6">
+                        <div class="single-footer-wrapper contact-wrap">
+                            <h5 class="ft-title">Contact </h5>
+                            <ul class="ft-link tmp-scroll-trigger animation-order-1 tmp-link-animation">
+                                <li><span class="ft-icon"><i class="fa-solid fa-phone"></i></span><a href="tel:+919043383437">+91 90433 83437</a></li>
+                                <li><span class="ft-icon"><i class="fa-solid fa-location-dot"></i></span>Thanjavur, Tamil Nadu</li>
+                                <li><span class="ft-icon"><i class="fa-solid fa-envelope"></i></span><a href="mailto:sindhuabi25@gmail.com">sindhuabi25@gmail.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="newslatter tmp-scroll-trigger animation-order-1">
+                            <h3 class="title">Let’s Connect</h3>
+                            <p class="para">Have a project in mind? Send me a message and let’s discuss it.</p>
+                            <form action="#" class="newsletter-form-1">
+                                <input type="email" placeholder="Your e-mail">
+                                <span>
+                                <a href="#" class="form-icon"><i class="fa-solid fa-arrow-right"></i></a>
+                            </span>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="copyright-area-one">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="main-wrapper tmp-scroll-trigger animation-order-1">
+                        <p class="copy-right-para">© <script>
+                                document.write(new Date().getFullYear())
+                            </script> | All Rights Reserved</p>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Footer Area  -->
+
+
+
+    <!-- progress area start -->
+    <div class="scrollToTop" style="display: block;">
+        <div class="arrowUp">
+            <i class="fa-light fa-arrow-up"></i>
+        </div>
+        <div class="water" style="transform: translate(0px, 87%);">
+            <svg viewBox="0 0 560 20" class="water_wave water_wave_back">
+                <use xlink:href="#wave"></use>
+            </svg>
+            <svg viewBox="0 0 560 20" class="water_wave water_wave_front">
+                <use xlink:href="#wave"></use>
+            </svg>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 560 20" style="display: none;">
+                <symbol id="wave">
+                    <path d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z" fill="#"></path>
+                    <path d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z" fill="#"></path>
+                    <path d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z" fill="#"></path>
+                    <path d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z" fill="#"></path>
+                </symbol>
+            </svg>
+
+        </div>
+    </div>
+    <!-- progress area end -->
+    <!-- <div class="tmp-right-demo">
+    <button class="demo-button">
+        <p class="mb--0">48</p>
+        <span class="text">Demos</span>
+    </button>
+</div> -->
+
+
+
+    <script src="assets/js/vendor/jquery.js"></script>
+    <script src="assets/js/vendor/jquery-ui.min.js"></script>
+    <script src="assets/js/vendor/waypoints.min.js"></script>
+
+    <script src="assets/js/plugins/odometer.js"></script>
+    <script src="assets/js/vendor/appear.js"></script>
+
+
+    <script src="assets/js/vendor/jquery-one-page-nav.js"></script>
+    <script src="assets/js/plugins/swiper.js"></script>
+
+    <script src="assets/js/plugins/gsap.js"></script>
+    <script src="assets/js/plugins/splittext.js"></script>
+    <script src="assets/js/plugins/scrolltigger.js"></script>
+    <script src="assets/js/plugins/scrolltoplugins.js"></script>
+    <script src="assets/js/plugins/smoothscroll.js"></script>
+    <!-- bootstrap Js-->
+    <script src="assets/js/vendor/bootstrap.min.js"></script>
+    <script src="assets/js/vendor/waw.js"></script>
+    <script src="assets/js/plugins/isotop.js"></script>
+    <script src="assets/js/plugins/animation.js"></script>
+    <script src="assets/js/plugins/contact.form.js"></script>
+    <script src="assets/js/vendor/backtop.js"></script>
+    <script src="assets/js/plugins/text-type.js"></script>
+    <!-- custom Js -->
+    <script src="assets/js/main.js"></script>
 </body>
+
 </html>
